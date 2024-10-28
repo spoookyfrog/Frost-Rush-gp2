@@ -60,7 +60,8 @@ public class movement : MonoBehaviour
 
     void FixedUpdate() //calls 50 times per frame (no delayed) and best when using psy
     {
-        //myRB.AddForce(Direction(debugs)*speedup);
+        myRB.AddForce(Direction(debugs)*speedup);
+
 
         RaycastHit hit;
         //sends an invisbile line down to check if the ground is under the car alongside with the layermask so it only interacts with the groundchecker
@@ -79,7 +80,7 @@ public class movement : MonoBehaviour
         }
         else // if the car is in the air then using gravity and not drag
         {
-            myRB.drag = 0.1f;
+            myRB.drag = 0f;
             myRB.AddForce(Vector3.up * gravityforce * 100f);
         }
     }
@@ -96,6 +97,7 @@ public class movement : MonoBehaviour
             Debug.DrawRay(transform.position, myRB.velocity, Color.yellow);
             Debug.Log("vector:" + dir);
             Debug.DrawRay(transform.position, dir * 2f, Color.white);
+            Debug.DrawRay(groundchecker.position, -transform.up * checkRadius, Color.red);
         }
         return dir;
     }
