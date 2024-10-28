@@ -65,7 +65,7 @@ public class gamemanager : MonoBehaviour
         DisplayRecord(record);
     
     }
-    void Update()
+    void FixedUpdate()
     {
         if (timerRunning)
         {

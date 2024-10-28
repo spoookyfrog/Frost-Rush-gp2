@@ -6,6 +6,12 @@ public class finishcheckpoint1 : MonoBehaviour
 {
 public gamemanager handler;
 public GameObject racer;
+
+void Awake()
+    {
+        source = GetComponent<AudioSource>();
+        soundtrigger = GetComponent<Collider>();
+    }
     
         public void OnTriggerEnter(Collider other)
         {
@@ -14,7 +20,9 @@ public GameObject racer;
             {
                 handler.StopTimer();
             }
-            
+            source.Play();
         }
+        AudioSource source;
+        Collider soundtrigger;
     
 }

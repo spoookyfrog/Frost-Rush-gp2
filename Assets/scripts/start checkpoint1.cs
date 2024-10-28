@@ -6,14 +6,25 @@ public class startcheckpoint1 : MonoBehaviour
 {
     public gamemanager handler;
     public GameObject racer;
+
+    void Awake()
+    {
+        source = GetComponent<AudioSource>();
+        soundtrigger = GetComponent<Collider>();
+    }
     
-        public void OnTriggerEnter(Collider other)
+        void OnTriggerEnter(Collider collider)
         {
              //Debug.Log("Trigger entered by: car ");
             if (racer = GameObject.FindGameObjectWithTag("Player"))
             {
-                handler.StopTimer();
+                handler.StartTimer();
             }
+
+            source.Play();
             
         }
+
+        AudioSource source;
+        Collider soundtrigger;
 }
