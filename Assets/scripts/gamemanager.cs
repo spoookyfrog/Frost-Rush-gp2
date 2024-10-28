@@ -51,7 +51,7 @@ public class gamemanager : MonoBehaviour
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked; //locks mouse pointer to the screen
+        //Cursor.lockState = CursorLockMode.Locked; //locks mouse pointer to the screen
 
         if (PlayerPrefs.HasKey("record"))
         {
@@ -71,7 +71,7 @@ public class gamemanager : MonoBehaviour
         {
             timer += Time.deltaTime;
             DisplayTime(timer);
-            Debug.Log("Timer running good: " + timer);
+            //Debug.Log("Timer running good: " + timer);
         }
         else 
         {
@@ -95,7 +95,7 @@ public class gamemanager : MonoBehaviour
         else 
 
         {
-        Debug.LogError("timerText UI element is not assigned in the Inspector.");
+        //Debug.LogError("timerText UI element is not assigned in the Inspector.");
         }
     }
 }
