@@ -61,6 +61,7 @@ public class movement : MonoBehaviour
     void FixedUpdate() //calls 50 times per frame (no delayed) and best when using psy
     {
         myRB.AddForce(Direction(debugs)*speedup);
+        
 
 
         RaycastHit hit;

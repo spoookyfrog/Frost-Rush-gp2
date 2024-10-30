@@ -6,6 +6,7 @@ public class cargobyebye : MonoBehaviour
 {
     public Rigidbody myRB;
     public GameObject myPlayer;
+    public Transform myRespawn;
     float positionX;
     float positionY;
     float positionZ; 
@@ -25,7 +26,9 @@ public class cargobyebye : MonoBehaviour
         if (other.gameObject.tag == "Player")
 
         {
-            myRB.transform.position = new Vector3(positionX, positionY, positionZ); //will find player's location and bring it to the checkpoint i made
+            myRB.velocity = Vector3.zero;
+            myRB.rotation = Quaternion.identity;
+            other.transform.position = myRespawn.position; //will find player's location and bring it to the checkpoint i made
         }
     }
 }
