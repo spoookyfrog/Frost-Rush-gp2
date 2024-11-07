@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class movement : MonoBehaviour
 {
@@ -40,6 +41,11 @@ public class movement : MonoBehaviour
     }
 
     turnInput = Input.GetAxis("Horizontal");
+
+    if (Input.GetKeyDown("r")) //restart the scene if player is stuck
+        {
+            SceneManager.LoadScene(1);
+        }
 
     //only rotates when the car is on the ground
     if (onGround)

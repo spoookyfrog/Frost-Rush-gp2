@@ -12,16 +12,11 @@ public class gamemanager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-    public void ExitButtonPressed()
-    {
-        Application.Quit();
-        Debug.Log("Bye bye game");
-    }
+    
     public TextMeshProUGUI timerText, recordText;
     public float timer = 0f, record;
     public bool timerRunning = false;
     public GameObject racer;
-
     public void StartTimer ()
     {
         timerRunning = true;
